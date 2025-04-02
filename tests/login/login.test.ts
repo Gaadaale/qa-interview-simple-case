@@ -5,7 +5,7 @@ test.describe.configure({ mode: 'serial' })
 
 test.describe('login form tests', () => {
   test('logging in works with existing account', async ({ page }) => {
-    await page.goto('localhost:8080/login')
+    await page.goto('http://localhost:8080/login')
 
     const existingUser = existingUsers[0]
 
@@ -22,8 +22,9 @@ test.describe('login form tests', () => {
     // Click on the button
     button.click()
 
-    // Wait for 1 second until page is fully loaded
+    // Wait for 2 second until page is fully loaded
     await page.waitForTimeout(1000)
     await expect(page.getByText('Log out')).toBeVisible()
   })
 })
+//test and modify by Osman Ismail
